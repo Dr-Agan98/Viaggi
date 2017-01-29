@@ -1,0 +1,39 @@
+<html>
+
+	<head>
+		<title>Viaggi Volta</title>
+		<link rel="stylesheet" href="index.css" type="text/css">
+	</head>
+
+	<body>
+		<div id="slideshow" >
+			<img src="images/bg-image1.jpg" width="1920px" height="1080px" style="" class="slideshow-images">
+			<img src="images/bg-image2.jpg" width="1920px" height="1080px" style="" class="slideshow-images">
+			<img src="images/bg-image3.jpg" width="1920px" height="1080px" style="" class="slideshow-images">
+		</div>
+		
+		<div id="content">
+		boio
+		</div>
+		
+		<script>
+			setInterval(changeBg,4000);
+			var i=2;
+			var slides = document.getElementsByClassName("slideshow-images");
+			
+			function changeBg(){	
+				if(i>0){
+					[i].style.opacity = "0";
+					i--;
+				}else{
+					do{	
+						i++;
+						document.getElementsByTagName("img")[i].style.opacity = "1";
+					}while(i<=2);
+				}
+			}
+		</script>
+		
+	</body>
+	
+</html>
