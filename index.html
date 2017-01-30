@@ -14,15 +14,17 @@
 		</div>
 		
 		<div id="side-nav">
-			<b>MENU</b>
-			<a href="javascript:void(0);" style="width:24px;height:24px;padding:0px;margin-left:55%;"><i class="material-icons" onclick="closeSideNav()">close</i></a>
-			<hr>
-			
+			<div id = "menu-header-container">
+				<b>MENU</b>
+				<a href="javascript:void(0);" style="width:24px;height:24px;padding:0px;" id="close-icon"><i class="material-icons" onclick="closeSideNav()">close</i></a>
+			</div>
+				
 			<ul>	
-				<li><a href="#">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li><a href="#">Offerte Viaggi</a></li>
 				<li><a href="#">Hotel</a></li>
 				<li><a href="#">Voli</a></li>
+				<li><a href="ins.html">Inserimento</a></li>
 				<li><a href="#">Il Mio Account</a></li>
 			</ul>
 		</div>
@@ -38,7 +40,7 @@
 				</div>
 				
 				<div id = "logo-container">	
-					<img src = "images/logo/logo.png" class="logo"></img>
+					<a href="index.html"><img src = "images/logo/logo.png" class="logo"></img></a>
 				</div>
 				
 				<div id="right-header">
@@ -146,10 +148,12 @@
 		function minHeader(){
 			if(document.body.scrollTop > 10){
 				header.style.fontSize = "15px";
-				header.style.backgroundColor = "#4d71a0";
+				header.style.boxShadow = "0px 5px 10px #93AEA6";
+				//header.style.backgroundColor = "#4d71a0";
 			}else{	
 				header.style.fontSize = "25px";
-				header.style.backgroundColor = "#EEE5E9";
+				header.style.boxShadow = "0px 0px 0px #93AEA6";
+				//header.style.backgroundColor = "#EEE5E9";
 			}
 		}
 		

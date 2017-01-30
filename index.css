@@ -6,6 +6,13 @@ body{
 	font-family: "Raleway",sans-serif;
 }
 
+input,select{
+	width:70%;
+	height:40px;
+	padding:5px;
+}
+
+
 /*Dark light when opening side-nav*/
 #dark-light{
 	position:fixed;
@@ -133,6 +140,11 @@ body{
 	padding:40% 10em 5% 10em;
 }
 
+#ins{
+	padding-top:1.5em;
+	text-align:center;
+}
+
 
 /*Side-nav*/
 #side-nav{
@@ -171,6 +183,33 @@ body{
 	background-color:#93AEA6;
 }
 
+#menu-header-container {
+    height: 2em;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#close-icon{
+	margin-left:50%;
+}
+
+.textfield:focus{
+
+}
+
+.button2{
+	background-color:#93AEA6;
+	padding:10px 15px 10px 15px;
+	border:none;
+	color:#ffffff;
+	border-radius: 3px;
+	transition: background-color 0.5s;
+}
+.button2:hover{
+	background-color:#728a83;
+	border-radius: 3px;
+	padding:10px 15px 10px 15px;
+	border:none;
+}
 
 .logo{
     height: 3em;
