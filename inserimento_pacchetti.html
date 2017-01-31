@@ -19,8 +19,9 @@
 			<!--a href="javascript:void(0);" style="width:24px;height:24px;padding:0px;margin-left:55%;"><i class="material-icons" onclick="closeSideNav()">close</i></a-->
 			
 			<ul>	
-				<li><a href="index.html">Home</a></li>
-				<li><a href="inserimento_pacchetti.html">Pacchetti</a></li>
+				<li><a href="ins.html"><-</a></li>
+				<li><a onclick="showInsert()" class="makeClickable">Inserisci</a></li>
+                <li><a onclick="showVisual()" class="makeClickable">Visualizza</a></li>
 			</ul>
 		</div>
 		
@@ -47,13 +48,8 @@
 			</div>
 			
 			<div id="content">
+                <div id="ins"></div>
 				
-				<div id="ins">
-					<input class = "textfield" type='text' value='Nome' name='nm'></input><br><br>
-					<input class = "textfield" type='text' value='Cognome' name='cg'></input><br><br>
-					<input class = "textfield" type='text' value='Codice Cliente' name='cc'></input><br><br>
-					<input class='button2' type='submit' value='Invia' name='inv'></input><br><br>
-				</div>
 			</div>
 			
 			<div id="footer">
@@ -94,6 +90,21 @@
 				header.style.backgroundColor = "#EEE5E9";
 			}
 		}
+        
+        function showInsert(){
+            
+            document.getElementById("content").innerHTML = "";
+            document.getElementById("content").innerHTML = "";   //INSERIRE HTML FORM         
+            
+            
+        }
+        
+        function showVisual(){
+            
+            document.getElementById("content").innerHTML = "";
+            document.getElementById("content").innerHTML = "";  //INSERIRE HTML VISUALIZZAZIONE E ROBE 
+            
+        }
 		
 	</script>
 
