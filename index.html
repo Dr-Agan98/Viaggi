@@ -9,24 +9,71 @@
 
 	<body onscroll="minHeader()">
 	
-		<div id="dark-light">
+		<div id="dark-light"></div>
 		
-		</div>
+		<div id="lateral-menu">
 		
-		<div id="side-nav">
-			<div id = "menu-header-container">
-				<b>MENU</b>
-				<a href="javascript:void(0);" style="width:24px;height:24px;padding:0px;" id="close-icon"><i class="material-icons" onclick="closeSideNav()">close</i></a>
+			<div id="main-side-nav" class="menu-style">
+			
+				<div id = "menu-header-container">
+					<b>MENU</b>
+					<a href="javascript:void(0);" id="close-icon"><i class="material-icons" onclick="closesideNav()">close</i></a>
+				</div>
+					
+				<ul>	
+					<li><a href="index.html">Home</a></li>
+					<li><a href="javascript:void(0);" onclick="popCli()">Clienti</a></li>
+					<li><a href="javascript:void(0);" onclick="popPren()">Prenotazioni</a></li>
+					<li><a href="javascript:void(0);" onclick="popPac()">Pacchetti</a></li>
+					<li><a href="javascript:void(0);" onclick="popVis()">Visualizzazioni</a></li>
+				</ul>
+				
 			</div>
 				
-			<ul>	
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Offerte Viaggi</a></li>
-				<li><a href="#">Hotel</a></li>
-				<li><a href="#">Voli</a></li>
-				<li><a href="ins.html">Inserimento</a></li>
-				<li><a href="#">Il Mio Account</a></li>
-			</ul>
+			<div id="popup-menu-clienti" class="menu-style">
+				<ul>
+					<li><a href="javascript:void(0);" style="width:24px;height:24px;padding:2px;" onclick="unpopCli()"><i class="material-icons">backspace</i></a></li>
+					<li><a href="#">Inserisci</a></li>
+					<li><a href="#">Modifica</a></li>
+					<li><a href="#">Cancella</a></li>
+					<li><a href="#">Visualizza</a></li>
+					<li><a href="#">Elenco</a></li>
+				</ul>
+			</div>
+			
+			<div id="popup-menu-prenotazioni" class="menu-style">
+				<ul>
+					<li><a href="javascript:void(0);" style="width:24px;height:24px;padding:2px;" onclick="unpopPren()"><i class="material-icons">backspace</i></a></li>
+					<li><a href="#">Inserisci</a></li>
+					<li><a href="#">Modifica</a></li>
+					<li><a href="#">Cancella</a></li>
+					<li><a href="#">Visualizza</a></li>
+					<li><a href="#">Elenco</a></li>
+				</ul>
+			</div>
+			
+			<div id="popup-menu-pacchetti" class="menu-style">
+				<ul>
+					<li><a href="javascript:void(0);" style="width:24px;height:24px;padding:2px;" onclick="unpopPac()"><i class="material-icons">backspace</i></a></li>
+					<li><a href="#">Inserisci</a></li>
+					<li><a href="#">Modifica</a></li>
+					<li><a href="#">Cancella</a></li>
+					<li><a href="#">Visualizza</a></li>
+					<li><a href="#">Elenco</a></li>
+				</ul>
+			</div>
+			
+			<div id="popup-menu-visualizzazioni" class="menu-style">
+				<ul>
+					<li><a href="javascript:void(0);" style="width:24px;height:24px;padding:2px;" onclick="unpopVis()"><i class="material-icons">backspace</i></a></li>
+					<li><a href="#">Viaggi Per Data</a></li>
+					<li><a href="#">Viaggi Per Pacchetto</a></li>
+					<li><a href="#">Pacchetto per Data</a></li>
+					<li><a href="#">Viaggi Per Nazione</a></li>
+					<li><a href="#">Pacchetti senza Vacc</a></li>
+				</ul>
+			</div>
+	
 		</div>
 		
 		<div id="wrapper">
@@ -34,8 +81,7 @@
 			<div id="header">
 				<div id="left-header">
 					<ul>
-						<li><a href="javascript:void(0);"><i class="material-icons" id="menu-icon" onclick="openSideNav()">menu</i></a></li>
-						<li><a href="#"><i class="material-icons" id="search-icon">search</i></a></li>
+						<li><a href="javascript:void(0);"><i class="material-icons" id="menu-icon" onclick="opensideNav()">menu</i></a></li>
 					</ul>
 				</div>
 				
@@ -45,10 +91,10 @@
 				
 				<div id="right-header">
 					<ul>
-						<li><a href="#">REGISTER</a></li>
-						<li><a href="#">LOGIN</a></li>
+						<li><a href="#"><i class="material-icons" id="search-icon">search</i></a></li>
 					</ul>
 				</div>
+			
 			</div>
 			
 			<div id="content">
@@ -93,9 +139,7 @@
 		
 			</div>
 			
-			<div id="footer">
-		
-			</div>
+			<div id="footer"></div>
 		
 		</div>
 	
@@ -104,7 +148,14 @@
 	<script>
 		setInterval(slideImg,4000);
 		
-		var sideNav = document.getElementById("side-nav");
+		var menuHeader = document.getElementById("menu-header-container");
+		var lateralMenu = document.getElementById("lateral-menu");
+		var sideNav = document.getElementById("main-side-nav");
+		var ppMenuCl = document.getElementById("popup-menu-clienti");
+		var ppMenuPr = document.getElementById("popup-menu-prenotazioni");
+		var ppMenuPc = document.getElementById("popup-menu-pacchetti");
+		var ppMenuVs = document.getElementById("popup-menu-visualizzazioni");
+		
 		var wrapper = document.getElementById("content");
 		var header = document.getElementById("header");
 		var rightHeader = document.getElementById("right-header");
@@ -114,12 +165,50 @@
 		var slideIndex = 0;
 		var slides = document.getElementsByClassName("slideshow");
 	
-		function openSideNav(){
+		function popCli(){
+			ppMenuCl.style.marginLeft = "0%";
+			sideNav.style.marginLeft = "-20%";
+		}
+		function unpopCli(){
+			ppMenuCl.style.marginLeft = "100%";
+			sideNav.style.marginLeft = "0%";
+		}
+		
+		function popVis(){
+			ppMenuVs.style.marginLeft = "0%";
+			sideNav.style.marginLeft = "-20%";
+		}
+		function unpopVis(){
+			ppMenuVs.style.marginLeft = "100%";
+			sideNav.style.marginLeft = "0%";
+		}
+		
+		function popPren(){
+			ppMenuPr.style.marginLeft = "0%";
+			sideNav.style.marginLeft = "-20%";
+		}
+		function unpopPren(){
+			ppMenuPr.style.marginLeft = "100%";
+			sideNav.style.marginLeft = "0%";
+		}
+		
+		function popPac(){
+			ppMenuPc.style.marginLeft = "0%";
+			sideNav.style.marginLeft = "-20%";
+		}
+		function unpopPac(){
+			ppMenuPc.style.marginLeft = "100%";
+			sideNav.style.marginLeft = "0%";
+		}
+	
+		function opensideNav(){
+			lateralMenu.style.marginLeft = "0%";
+			menuHeader.style.marginLeft = "0%";
+			
 			sideNav.style.marginLeft = "0%";
 			sideNav.style.borderRight = "1px solid #d2d2d2";
 			
 			wrapper.style.marginLeft = "20%";
-			wrapper.style.marginRight = "-20%";
 			
 			dark.style.marginLeft = "20%";
 			dark.style.zIndex = "3";
@@ -127,9 +216,14 @@
 			
 			header.style.marginLeft = "20%";
 			rightHeader.style.marginRight = "-20%";
+			
 		}
 	
-		function closeSideNav(){
+		function closesideNav(){
+		
+			lateralMenu.style.marginLeft = "-20%";
+			menuHeader.style.marginLeft = "-20%";
+			
 			sideNav.style.marginLeft = "-20%";
 			sideNav.style.borderRight = "0px";
 			
@@ -143,17 +237,17 @@
 			header.style.borderBottomColor = "#d2d2d2";
 			header.style.marginLeft = "0%";
 			rightHeader.style.marginRight = "0%";
+			
+			document.getElementById("popup-menu").style.marginLeft = "-50%";
 		}
 	
 		function minHeader(){
 			if(document.body.scrollTop > 10){
 				header.style.fontSize = "15px";
 				header.style.boxShadow = "0px 5px 10px #93AEA6";
-				//header.style.backgroundColor = "#4d71a0";
 			}else{	
 				header.style.fontSize = "25px";
 				header.style.boxShadow = "0px 0px 0px #93AEA6";
-				//header.style.backgroundColor = "#EEE5E9";
 			}
 		}
 		

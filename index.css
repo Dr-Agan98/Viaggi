@@ -26,7 +26,7 @@ input,select{
 }
 
 #wrapper{
-	
+	margin-left:0%;
 }
 
 /*Header containing left-header,right-header and logo-container*/
@@ -41,7 +41,7 @@ input,select{
 	border-bottom:1px solid #d2d2d2;
 	font-weight:bold;
 	z-index:2;
-	transition: height 0.8s linear, background-color 1s linear,margin-left 1s;
+	transition: height 0.8s linear, background-color 1s linear,margin-left 1s,box-shadow 1s;
 }
 
 #header a{
@@ -146,30 +146,80 @@ input,select{
 }
 
 
-/*Side-nav*/
-#side-nav{
+/*MENU*/
+#lateral-menu{
 	position:fixed;
+	margin-left:-20%;
+	top:0px;
+	left:0px;
+	width:20%;
+	height:100%;
+	overflow-x:hidden;	
+}
+
+/*Main-Side-nav*/
+#main-side-nav{
+	position:fixed;
+	top:inherit;
+	left:inherit;
 	padding: 1em 1em;
-    box-sizing: border-box;
-    top: 0px;
-    left: 0px;
 	margin-left:-20%;
 	width:20%;
 	height:100%;
+	box-sizing:border-box;
 	transition:margin-left 1s;
 }
 
-#side-nav hr{
+/*Popup*/
+#popup-menu-clienti{
+	position:absolute;
+	width:100%; 
+	margin-left:100%;
+	padding: 1em 1em;
+	box-sizing:border-box;
+	transition:margin-left 1s;
+}
+
+#popup-menu-prenotazioni{
+	position:absolute;
+	width:100%;
+	margin-left:100%;
+	padding: 1em 1em;
+	box-sizing:border-box;
+	transition:margin-left 1s;
+}
+
+#popup-menu-pacchetti{
+	position:absolute;
+	width:100%;
+	margin-left:100%;
+	padding: 1em 1em;
+	box-sizing:border-box;
+	transition:margin-left 1s;
+}
+
+#popup-menu-visualizzazioni{
+	position:absolute;
+	width:100%;
+	margin-left:100%;
+	padding: 2.5em 1em;
+	font-size:20px;
+	box-sizing:border-box;
+	transition:margin-left 1s;
+}
+
+div.menu-style hr{
 	width: 100%;
 	margin-top: 1em;
 }
 
-#side-nav ul{
+div.menu-style ul{
 	list-style-type: none;
 	padding: 0px;
+	margin-top: 3em;
 }
 
-#side-nav a{
+div.menu-style a{
 	display: inline-block;
     text-decoration: none;
     color: #383D3B;
@@ -179,17 +229,28 @@ input,select{
 	transition: background-color 0.2s;
 }
 
-#side-nav a:hover{
+div.menu-style a:hover{
 	background-color:#93AEA6;
 }
 
 #menu-header-container {
-    height: 2em;
+	position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 20%;
+	margin-left:-20%;
+    padding: 1em;
+    height: 3em;
     border-bottom: 1px solid #d2d2d2;
+    box-sizing: border-box;
+	transition:margin-left 1s;
 }
 
 #close-icon{
-	margin-left:50%;
+	    margin-left: 45%;
+	width:24px;
+	height:24px;
+	padding:0px;
 }
 
 .textfield:focus{
